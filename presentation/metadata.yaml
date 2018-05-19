@@ -1,0 +1,20 @@
+---
+title: Easier \latex with Pandoc and Markdown
+subtitle: Convenient Academic Writing
+author: Nguyen, Duc Hieu
+date: May 30, 2018
+header-includes: 
+  - \newcommand{\latex}{\LaTeX\ }
+  - \newcommand{\tex}{\TeX\ }
+toc: true
+theme: metropolis
+themeoptions: [ 
+numbering=fraction,
+]
+colorlinks: true
+bibliography: pandoc-markdown.bib
+link-citations: true
+listings: true
+nocite: |
+    @*
+---
