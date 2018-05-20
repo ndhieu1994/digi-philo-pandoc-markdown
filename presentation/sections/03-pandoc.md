@@ -166,7 +166,7 @@ digraph workflow {
 
 `\end{center}}`{=latex}
 
-Reguirements
+Requirements
 ------------
 
 -   Text editor: Notepad++, Geany
@@ -202,7 +202,7 @@ For more: `man pandoc`
 Pandoc: YAML-Header
 -------------------
 
-In Pandoc Metadata for a document are written in YAML\
+In Pandoc metadata for a document are written in YAML\
 (usually at the top of Markdown documents):
 
 ``` {.yaml}
@@ -224,13 +224,13 @@ Inline \tex commands will be preserved\
 and passed unchanged to the \latex writers:
 
 ``` {.md}
-You can use LaTeX to create 
+You can use \LaTeX\ to create 
 \textbf{bold} or \textit{italic} text.
 ```
 
 Renders
 
-You can use LaTeX to create \textbf{bold} or \textit{italic} text.
+You can use \LaTeX\ to create \textbf{bold} or \textit{italic} text.
 
 Raw \tex (2)
 ------------
@@ -274,10 +274,10 @@ Detailed \tex Tables are easily added if necessary:
 TeX Math is written between two `$`-signs
 
 ``` {.md}
-<!-- Inline -->
+<!-- Inline math -->
 Here we see some inline math: $a^2 + b^2 = c^2$
-<!-- Block equations -->
-And some block equations
+<!-- displayed equation -->
+And some displayed equation:
 $$ a^2 + b^2 = c^2 $$
 ```
 
@@ -285,7 +285,7 @@ both render:
 
 Here we see some inline math: $a^2 + b^2 = c^2$
 
-And some block equations $$ a^2 + b^2 = c^2 $$
+And some displayed equation: $$ a^2 + b^2 = c^2 $$
 
 Footnotes (1)
 -------------
@@ -505,7 +505,7 @@ Limitations of Markdown
     -   cannot add lines between rows and columns
     -   cannot span over rows and columns
 -   Nesting of \latex and Markdown not possible
--   Latex crossrefencing with hyperlinks instead of `\label` and `\ref`
+-   Pandoc generates cross references with hyperlinks instead of `\label` and `\ref`
 -   Math is only inline or display expressions (latter as `\displaymath`)
     -   not possible to specify other environments: `equation`, `gather` etc.
 

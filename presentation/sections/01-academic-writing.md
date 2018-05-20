@@ -66,7 +66,7 @@ What about \latex?
 -   Open source
 -   Less compatibility issues
 -   Smaller file size
--   Separation of content and format
+-   Separation of content and form
 -   Works well with Version Control Systems
 
 . . .

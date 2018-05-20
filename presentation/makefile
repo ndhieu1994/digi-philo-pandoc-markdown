@@ -14,7 +14,7 @@ files = $(sort $(wildcard $(INPUT_DIR)/*.md))
 PANDOC_OPTIONS= --standalone
 
 PANDOC_FILTERS=\
-	--filter $(FILTERS)/graphviz_shellpy \
+	--filter $(FILTERS)/graphviz_shell.py \
 	--filter pandoc-citeproc \
 
 PANDOC_BEAMER_OPTIONS=\
