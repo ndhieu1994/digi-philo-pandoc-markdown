@@ -14,10 +14,8 @@ files = $(sort $(wildcard $(INPUT_DIR)/*.md))
 PANDOC_OPTIONS= --standalone
 
 PANDOC_FILTERS=\
-	--filter $(FILTERS)/graphviz2.py \
-	--filter $(FILTERS)/latex_env_div.py \
+	--filter $(FILTERS)/graphviz_shellpy \
 	--filter pandoc-citeproc \
-	# --filter $(FILTERS)/run_programm.py \
 
 PANDOC_BEAMER_OPTIONS=\
 	-t beamer \
@@ -32,7 +30,7 @@ PANDOC_NOTES_OPTIONS=\
 PANDOC_HANDOUT_OPTIONS=\
 	-V handout
 
-.PHONY: all clean
+.PHONY: all clean slides notes handout latex filtertest
 
 all: slides notes handout
 
