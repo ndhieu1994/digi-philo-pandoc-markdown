@@ -5,8 +5,12 @@ Pandoc
 ------
 
 -   Created in 2006 by John MacFarlane
--   Document format converter
--   Commandline tool
+-   Commandline tool for converting document formats
+-   Intention:
+    -   Markdown originally designed for HTML generation
+    -   Pandoc is designed for different output formats
+    -   Initial document should be written in Markdown
+
 
 Pandoc: Universal Converter
 ---------------------------
@@ -45,6 +49,7 @@ HTML5 + JavaScript slide show), revealjs (reveal.js HTML5 + JavaScript slide sho
 HTML and JavaScript slide show), tei (TEI Simple), zimwiki (ZimWiki markup)
 
 \normalsize
+
 How Pandoc works
 ----------------
 
@@ -183,11 +188,16 @@ Requirements
 Command
 -------
 
-To generate PDF document:
+To generate PDF documents:
 
 ``` {.sh}
+# for articles
 pandoc input.md -o output.pdf
+# for beamer presentations
+pandoc -t beamer input.md -o output.pdf
 ```
+
+. . .
 
 Additional flags:
 
@@ -228,7 +238,7 @@ You can use \LaTeX\ to create
 \textbf{bold} or \textit{italic} text.
 ```
 
-Renders
+Renders:
 
 You can use \LaTeX\ to create \textbf{bold} or \textit{italic} text.
 
@@ -278,14 +288,15 @@ TeX Math is written between two `$`-signs
 Here we see some inline math: $a^2 + b^2 = c^2$
 <!-- displayed equation -->
 And some displayed equation:
-$$ a^2 + b^2 = c^2 $$
+$$ \sum_{k=1}^{n} k = \frac{n(n+1)}{2}$$
 ```
 
 both render:
 
 Here we see some inline math: $a^2 + b^2 = c^2$
 
-And some displayed equation: $$ a^2 + b^2 = c^2 $$
+And some displayed equation:
+$$ \sum_{k=1}^{n} k = \frac{n(n+1)}{2}$$
 
 Footnotes (1)
 -------------
@@ -365,8 +376,8 @@ Or are added as argument:
 pandoc --bibliography mybib.bib ...
 ```
 
-Advanced features
-=================
+Intermediate features
+=====================
 
 Templates
 ---------
@@ -375,8 +386,8 @@ Generate default templates for further customization:
 
 ``` {.bash}
 pandoc -D [FORMAT] > [filename]
-pandoc -D latex > my-template.tex
-pandoc -D beamer > my-template.beamer
+pandoc -D latex > template.tex
+pandoc -D beamer > template.beamer
 ```
 
 To use it: `--template my-template.tex`
@@ -424,87 +435,13 @@ Use them with `--filter`:
 pandoc --filter filter.py input.md -o output.pdf
 ```
 
-Filters: Example (1)
---------------------
-
-``` {.py}
-#!/usr/bin/env python
-""" Add a pagebreak to every Level 1 Header """
-from panflute import *
-def headerpagebreak(elem, doc):
-  if isinstance(elem, Header):
-    if elem.level == 1:
-      return [
-          RawBlock('\pagebreak', format='latex'), 
-          elem ]
-if __name__ == "__main__":
-  run_filter(headerpagebreak)
-```
-
-Filters: Example (2)
---------------------
-
-``` {.json}
-"blocks": [
-{
-  "t": "Header",
-  "c": [ 
-    1, 
-    [ "header", [], [] ],
-    [ 
-      { "t": "Str", 
-      "c": "Header Lv1" } 
-    ]
-  ]
-}
-]
-```
-
-Filters: Example (3)
---------------------
-
-::: {.columns}
-::: {.column}
-
-``` {.json}
-"blocks": [
-{
-  "t": "RawBlock",
-  "c": [
-  "latex",
-  "\\pagebreak"
-  ]
-},
-```
-
-:::
-::: {.column}
-
-``` {.json}
-{
-  "t": "Header",
-  "c": [ 
-    1, 
-    [ "header", [], [] ],
-    [ 
-      { "t": "Str", 
-      "c": "Header Lv1" } 
-    ]
-  ]
-}
-]
-```
-
-:::
-:::
-
 Limitations of Markdown
 -----------------------
 
 -   No further customization of Tables
     -   cannot add lines between rows and columns
     -   cannot span over rows and columns
--   Nesting of \latex and Markdown not possible
+-   Free nesting of \latex and Markdown not possible
 -   Pandoc generates cross references with hyperlinks instead of `\label` and `\ref`
 -   Math is only inline or display expressions (latter as `\displaymath`)
     -   not possible to specify other environments: `equation`, `gather` etc.

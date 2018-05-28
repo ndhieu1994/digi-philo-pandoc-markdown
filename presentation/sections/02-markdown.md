@@ -1,17 +1,5 @@
-Basic Markdown
-==============
-
-Markdown: What is it again?
----------------------------
-
--   Created by John Gruber and Aaron Schwarz
--   Lightweight markup language in plain text
--   High readability
--   Convertible into HTML/XHTML and other formats
--   One of the standard on the net:
-    -   README files
-    -   Forum & Blog Posts
-    -   Chat services
+\latex vs Markdown
+==================
 
 Basic Markdown: Some things you can format
 ------------------------------------------
@@ -113,8 +101,37 @@ Markdown
   - items
 ```
 
+``` {.md}
+* some
+* items
+  * sub
+  * items
+```
+
 :::
 :::
+
+Links and Images
+----------------
+
+\latex:
+
+``` {.tex}
+% Links
+\usepackage{hyperref}
+\href{http://example.net}{descrition}
+% Images
+\includegraphics{/path/to/image}
+```
+
+Markdown:
+
+```{.md}
+<!-- Links -->
+[link](example.net)
+<!-- Images -->
+![Alt](/path/to/image.jpg)
+```
 
 Tables: Example
 ---------------
@@ -238,9 +255,11 @@ We might need further information about tables.
 \normalsize
 
 ::: notes
+
 -   They must begin with a row of dashes, before the header text (unless the headers are omitted).
 -   They must end with a row of dashes, then a blank line.
 -   The rows must be separated by blank lines.
+
 :::
 
 
@@ -265,25 +284,4 @@ We might need further  information about tables.[^pan]
 
 [^pan]: <https://pandoc.org/MANUAL.html#tables>
 
-Links and Images
-----------------
-
-\latex:
-
-``` {.tex}
-% Links
-\usepackage{hyperref}
-\href{http://example.net}{descrition}
-% Images
-\includegraphics{/path/to/image}
-```
-
-Markdown:
-
-```{.md}
-<!-- Links -->
-[link](example.net)
-<!-- Images -->
-![Alt](/path/to/image.jpg)
-```
 

@@ -4,10 +4,9 @@ Summary and Links
 Summary
 -------
 
--   Pandoc and Markdown as alternative to Word and \latex
+-   Pandoc Markdown features as alternative to \latex for academics
 -   Pandoc can read and write countless kinds of formats
--   Its Markdown has its own features for creating \latex files
--   Personalized templates and filters extend already powerful Pandoc
+-   Personalized templates and filters extend already powerful tool
 
 Links
 -----
@@ -20,7 +19,7 @@ Links
 -   Pandoc:
     -   <https://pandoc.org>
     -   <https://pandoc.org/MANUAL.html>
--   panflute:
+-   Panflute:
     -   <http://scorreia.com/software/panflute/>
 -   My Presentation:
     -   <https://github.com/ndhieu1994/digi-philo-pandoc-markdown/>
@@ -31,10 +30,3 @@ References
 
 ::: {#refs}
 :::
-
---------------------
-
-`\center{\huge{\textbf{`{=latex}
-Thank you.
-Any Questions?
-`}}}`{=latex}
