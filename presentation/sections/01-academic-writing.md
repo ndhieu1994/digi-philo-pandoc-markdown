@@ -22,7 +22,7 @@ Criteria for writing tools
 ### Additional Management:
 
 -   Images, tables and Formulas
--   Managing Bibliography
+-   Bibliography
 -   Collaboration
 
 :::
@@ -31,7 +31,7 @@ Criteria for writing tools
 Markdown
 --------
 
--   Created by John Gruber and Aaron Schwarz
+-   Created by John Gruber and Aaron Swartz
 -   Lightweight markup language in plain text
 -   Convertible into HTML/XHTML
 -   One of the standard on the net:
@@ -47,8 +47,9 @@ Advantages of Markdown for Academics
 
 -   Separation of content and form\
     \textrightarrow Focus on writing
--   Less compatibility issues
 -   Platform independence
+-   Less compatibility issues
+-   Future Proof
 -   Logging and merging with VCSs
 
 . . .

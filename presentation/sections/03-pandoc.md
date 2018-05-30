@@ -1,54 +1,13 @@
 Pandoc
 ======
 
-Pandoc
-------
-
--   Created in 2006 by John MacFarlane
--   Commandline tool for converting document formats
--   Intention:
-    -   Markdown originally designed for HTML generation
-    -   Pandoc is designed for different output formats
-    -   Initial document should be written in Markdown
-
-
 Pandoc: Universal Converter
 ---------------------------
 
-\normalsize
-Input: 28 formats (6 markdown flavours)
-
-\tiny
-commonmark (CommonMark Markdown), creole (Creole 1.0), docbook (DocBook), docx (Word
-docx), epub (EPUB), fb2 (FictionBook2 e-book), gfm (GitHub-Flavored Markdown), haddock
-(Haddock markup), html (HTML), jats (JATS XML), json (JSON version of native AST), latex
-(\latex), markdown (Pandoc's Markdown), markdown\_mmd (MultiMarkdown), markdown\_phpextra
-(PHP Markdown Extra), markdown\_strict (original unextended Markdown), mediawiki
-(MediaWiki markup), muse (Muse), native (native Haskell), odt (ODT), opml (OPML), org
-(Emacs Org mode), rst (reStructuredText), t2t (txt2tags), textile (Textile), tikiwiki
-(TikiWiki markup), twiki (TWiki markup), vimwiki (Vimwiki)
-
-\normalsize
-Output: 45 formats
-
-\tiny
-asciidoc (AsciiDoc), beamer (\latex beamer slide show), commonmark (CommonMark Markdown),
-context (ConTeXt), docbook or docbook4 (DocBook 4), docbook5 (DocBook 5), docx (Word
-docx), dokuwiki (DokuWiki markup), epub or epub3 (EPUB v3 book), epub2 (EPUB v2), fb2
-(FictionBook2 e-book), gfm (GitHub-Flavored Markdown), haddock (Haddock markup), html or
-html5 (HTML, i.e. HTML5/XHTML polyglot markup), html4 (XHTML 1.0 Transitional), icml
-(InDesign ICML), jats (JATS XML), json (JSON version of native AST), latex (\latex), man
-(groff man), markdown (Pandoc's Markdown), markdown\_mmd (MultiMarkdown),
-markdown\_phpextra (PHP Markdown Extra), markdown\_strict (original unextended Markdown),
-mediawiki (MediaWiki markup), ms (groff ms), muse (Muse), native (native Haskell), odt
-(OpenOffice text document), opml (OPML), opendocument (OpenDocument), org (Emacs Org
-mode), plain (plain text), pptx (PowerPoint slide show), rst (reStructuredText), rtf (Rich
-Text Format), texinfo (GNU Texinfo), textile (Textile), slideous (Slideous HTML and
-JavaScript slide show), slidy (Slidy HTML and JavaScript slide show), dzslides (DZSlides
-HTML5 + JavaScript slide show), revealjs (reveal.js HTML5 + JavaScript slide show), s5 (S5
-HTML and JavaScript slide show), tei (TEI Simple), zimwiki (ZimWiki markup)
-
-\normalsize
+-   Created in 2006 by John MacFarlane
+-   Commandline tool for converting document formats
+-   Input: 28 formats (6 markdown flavours)
+-   Output: 45 formats
 
 How Pandoc works
 ----------------
@@ -102,9 +61,7 @@ digraph workflow {
     pandoc -> filters -> pandoc [dir=back, minlen=2.0];
 
     pandoc -> DOCX;
-    LaTeX;
     pandoc -> LaTeX;
-    PDF;
     pandoc -> PDF;
     pandoc -> HTML;
 }
@@ -171,8 +128,8 @@ digraph workflow {
 
 `\end{center}}`{=latex}
 
-Requirements
-------------
+Software Requirements
+---------------------
 
 -   Text editor: Notepad++, Geany
 -   Commandline Terminal
@@ -221,6 +178,8 @@ In Pandoc metadata for a document are written in YAML\
 title: Title of your work
 author: Name of Author
 date: 11.11.2011
+header-includes:
+  - \usepackage{geometry}
 tags: [markdown, writing]
 abstract: |
   Abstract text here.
