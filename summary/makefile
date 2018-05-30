@@ -7,12 +7,7 @@ FILTERS =\
 
 all: summary.pdf
 clean:
-	rm test.tex summary.pdf
-
-tex: test.tex
-
-test.tex: $(files)
-	pandoc $(FILTERS) -t latex $^ -o $@
+	rm summary.pdf
 
 summary.pdf: $(files)
 	pandoc $(FILTERS) $^ -o $@
